@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'NursePanel/NursePanel.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adding Vaccination Schedule</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card my-4 p-3 mb-2 bg-light text-dark">
+                <div class="card-header p-3 mb-2 bg-light text-dark">
+                  <strong>Add Schedule</strong>
+                </div>
+<form method="POST">
+{% csrf_token %}
+{{form|crispy}}
+<br>
+            <div class="card text-center" >
+            <div class="card-footer text-muted ">
+                <button type="submit"  class="btn btn-outline-primary btn-sm">Submit</button>
+            </div>
+            </div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}
+</html>

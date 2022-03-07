@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% extends 'UserPanel/UserPanel.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for i in profileview %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card my-4 p-3 mb-2 bg-light text-dark">
+                <div class="card-header p-3 mb-2 bg-light text-dark">
+                  <strong>Profile</strong>
+                </div>
+        <div class="card text">
+             <div class="card-header">
+                <h5>{{i.Name}}</h5>
+                <h5>{{i.Address}}</h5>
+                <h5>{{i.Contact_No}}</h5>
+            </div>
+        <div class="card-body">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                    <div class="col col-lg-3">
+                      Child Name
+                    </div>
+                    <div class="col-md-auto">
+                      :
+                    </div>
+                    <div class="col col-lg-3">
+                      {{i.Child_Name}}
+                    </div>
+            </div>
+
+            <div class="row justify-content-md-center">
+                    <div class="col col-lg-3">
+                      Child Age
+                    </div>
+                    <div class="col-md-auto">
+                      :
+                    </div>
+                    <div class="col col-lg-3">
+                      {{i.Child_Age}}
+                    </div>
+            </div>
+            <div class="row justify-content-md-center">
+                    <div class="col col-lg-3">
+                      Child Gender
+                    </div>
+                    <div class="col-md-auto">
+                      :
+                    </div>
+                    <div class="col col-lg-3">
+                      {{i.Child_Gender}}
+                    </div>
+            </div>
+            <div class="row justify-content-md-center">
+                    <div class="col col-lg-3">
+                      Recent Vaccination
+                    </div>
+                    <div class="col-md-auto">
+                      :
+                    </div>
+                    <div class="col col-lg-3">
+                      {{i.Recent_Vaccination}}
+                    </div>
+            </div>
+
+        </div>
+        </div>
+            <div class="card text-center" >
+                 <div class="card-footer text-muted ">
+            <a href="{% url 'profile_update' i.id %}" class="btn btn-outline-primary btn-sm">Update</a>
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endfor %}
+</body>
+{% endblock %}
+</html>

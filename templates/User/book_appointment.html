@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'UserPanel/UserPanel.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card my-4 p-3 mb-2 bg-light text-dark">
+                <div class="card-header p-3 mb-2 bg-light text-dark">
+                  <strong>Book Appointment</strong>
+                </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class=" form-control-label">Date</label>
+                    <input    class="form-control" readonly value="{{schedule.Date}}">
+
+                </div>
+                 <div class="form-group">
+                    <label class=" form-control-label">Hospital</label>
+                     <input  required  class="form-control" readonly value="{{schedule.Hospital}}">
+
+                </div>
+                 <div class="form-group">
+                    <label class=" form-control-label">Start Time</label>
+                     <input  required  class="form-control" readonly value="{{schedule.Start_Time}}">
+                </div>
+                <div class="form-group">
+                    <label  class=" form-control-label">End Time</label>
+                 <input  required  class="form-control" readonly value="{{schedule.End_Time}}">
+
+                </div>
+            <div class="card text-center" >
+            <div class="card-footer text-muted ">
+                <button type="submit"  class="btn btn-outline-primary btn-sm">Submit</button>
+            </div>
+            </div>
+<!--                {% for message in messages %}-->
+<!--                <div class="alert alert-primary" role="alert">-->
+<!--                    {{message}}-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}
+</html>

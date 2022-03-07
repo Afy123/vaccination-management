@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'AdminPanel/AdminPanel.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adding Appointment</title>
+</head>
+<body>
+
+<form method="POST">
+{% csrf_token %}
+{{form|crispy}}
+<br>
+<button type="submit">ADD</button>
+</form>
+
+
+</body>
+{% endblock %}
+</html>

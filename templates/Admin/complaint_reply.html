@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'AdminPanel/AdminPanel.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Reply Complaint</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card my-4 p-3 mb-2 bg-light text-dark">
+                <div class="card-header p-3 mb-2 bg-light text-dark">
+                  <strong>Profile Update</strong>
+                </div>
+                <form method="post">{% csrf_token %}
+                <div class="form-group">
+                <label class=" form-control-label">Subject</label>
+                    <input  required  class="form-control" readonly value="{{complaint.Subject}}">
+
+                </div>
+                 <div class="form-group">
+                     <label class=" form-control-label">Complaint</label>
+                    <input  required  class="form-control" readonly value="{{complaint.Complaint}}">
+
+                </div>
+                <div class="form-group">
+                    <label for="company" class=" form-control-label">Reply</label>
+                    <textarea cols="5" rows="7" required id="company" class="form-control" name="reply">
+                </textarea>
+                </div>
+                <div class="form-actions">
+                    <div class="form-actions form-group ">
+                        <div class="card text-center" >
+                        <div class="card-footer text-muted ">
+                            <button type="submit"  class="btn btn-outline-primary btn-sm">Submit</button>
+                        </div>
+                        </div>
+                 </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>
